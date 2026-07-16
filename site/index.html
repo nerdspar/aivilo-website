@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aivilo — Enterprise AI Services That Get You to Production</title>
+<meta name="description" content="Aivilo is the AI services partner for regulated enterprises. We prove the ROI, cut cost and risk, and engineer your AI from stalled pilot to production — then run it for you." />
+<meta name="theme-color" content="#070a12" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="canonical" href="https://aivilo.nerdspar.com/" />
+<!-- Open Graph / social -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Aivilo" />
+<meta property="og:url" content="https://aivilo.nerdspar.com/" />
+<meta property="og:title" content="Aivilo — Enterprise AI Services That Get You to Production" />
+<meta property="og:description" content="We prove the ROI, cut cost and risk, and engineer your AI from stalled pilot to production — faster, and for less." />
+<meta property="og:image" content="https://aivilo.nerdspar.com/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Aivilo — Enterprise AI Services That Get You to Production" />
+<meta name="twitter:description" content="We prove the ROI, cut cost and risk, and engineer your AI from stalled pilot to production — faster, and for less." />
+<meta name="twitter:image" content="https://aivilo.nerdspar.com/og-image.png" />
+<!-- Structured data: Organization + WebSite + SoftwareApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aivilo.nerdspar.com/#organization",
+      "name": "Aivilo Cloud Technologies",
+      "url": "https://aivilo.nerdspar.com/",
+      "logo": "https://aivilo.nerdspar.com/apple-touch-icon.png",
+      "description": "Aivilo Cloud Technologies is an AI services partner for regulated enterprises — AI Readiness Assessments, professional engineering services, and managed AI operations that turn AI pilots into production ROI.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@aivilo.ai",
+        "contactType": "sales"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aivilo.nerdspar.com/#website",
+      "url": "https://aivilo.nerdspar.com/",
+      "name": "Aivilo",
+      "publisher": { "@id": "https://aivilo.nerdspar.com/#organization" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Aivilo Lens",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Cloud",
+      "url": "https://aivilo.nerdspar.com/platform",
+      "description": "Lens is a unified observability and governance platform for enterprise AI — CloudOps, DataOps, GenAIOps, and AgentOps in one control plane."
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   AIVILO — Design System
+   ============================================================ */
+:root{
+  --bg:#ffffff;
+  --bg-soft:#f5f6f9;
+  --panel:#ffffff;
+  --text:#0a0e17;
+  --text-2:#3a4256;
+  --muted:#697086;
+  --line:#e7e9f0;
+  --line-2:#eff1f6;
+
+  --dark:#070a12;
+  --dark-2:#0c1120;
+  --dark-panel:#111828;
+  --dark-line:#1e2740;
+  --dark-text:#eef0f6;
+  --dark-muted:#98a1ba;
+
+  --accent:#6d5af0;
+  --accent-2:#1fd3c4;
+  --accent-ink:#5847e6;
+  --grad:linear-gradient(120deg,#6d5af0 0%,#5b7cf3 45%,#1fd3c4 100%);
+  --grad-soft:linear-gradient(120deg,rgba(109,90,240,.14),rgba(31,211,196,.14));
+
+  --r-sm:10px;
+  --r:16px;
+  --r-lg:24px;
+  --r-xl:32px;
+  --shadow:0 1px 2px rgba(10,14,23,.04),0 12px 32px rgba(10,14,23,.06);
+  --shadow-lg:0 24px 60px rgba(10,14,23,.12);
+  --container:1180px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+/* Smooth cross-page fades where supported (progressive enhancement) */
+@view-transition{navigation:auto}
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4,.display{font-family:'Space Grotesk','Inter',sans-serif;font-weight:600;letter-spacing:-.02em;line-height:1.08;color:var(--text)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:var(--container);margin:0 auto;padding:0 24px}
+
+/* Type scale */
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink)}
+.h-xl{font-size:clamp(2.6rem,6vw,4.4rem)}
+.h-lg{font-size:clamp(2rem,4.4vw,3.2rem)}
+.h-md{font-size:clamp(1.5rem,2.6vw,2.1rem)}
+.lead{font-size:clamp(1.05rem,1.5vw,1.28rem);color:var(--text-2);line-height:1.55}
+.muted{color:var(--muted)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-weight:600;font-size:.98rem;padding:.85rem 1.5rem;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:.25s var(--ease);white-space:nowrap;font-family:inherit}
+.btn svg{width:16px;height:16px;transition:transform .25s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn-primary{background:var(--text);color:#fff}
+.btn-primary:hover{background:#000;transform:translateY(-2px);box-shadow:0 12px 28px rgba(10,14,23,.22)}
+.btn-accent{background:var(--grad);color:#fff;box-shadow:0 8px 24px rgba(109,90,240,.28)}
+.btn-accent:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(109,90,240,.4)}
+.btn-ghost{background:transparent;color:var(--text);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--text);background:var(--bg-soft)}
+.btn-light{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.18)}
+.btn-light:hover{background:rgba(255,255,255,.16);transform:translateY(-2px)}
+.btn-white{background:#fff;color:var(--text)}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(0,0,0,.25)}
+
+.textlink{display:inline-flex;align-items:center;gap:.4rem;font-weight:600;color:var(--accent-ink)}
+.textlink svg{width:15px;height:15px;transition:transform .25s var(--ease)}
+.textlink:hover svg{transform:translateX(4px)}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:transparent;border-bottom:1px solid transparent;transition:background .35s var(--ease),border-color .35s var(--ease),box-shadow .35s var(--ease)}
+header.scrolled{background:var(--dark);border-bottom-color:var(--dark-line);box-shadow:0 4px 20px rgba(0,0,0,.35)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;cursor:pointer}
+.brand-logo{height:30px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:.35rem;list-style:none}
+.nav-links a{padding:.5rem .9rem;border-radius:8px;font-weight:500;font-size:.96rem;color:var(--dark-muted);transition:.2s}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.nav-links a.active{color:#fff;font-weight:600}
+.nav-cta{display:flex;align-items:center;gap:.5rem}
+.nav-cta .login{font-weight:600;font-size:.95rem;padding:.5rem .6rem;color:var(--dark-muted)}
+.nav-cta .login:hover{color:#fff}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.burger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:.3s var(--ease)}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ============================================================
+   VIEWS / ROUTING
+   ============================================================ */
+.view{display:none;animation:fade .5s var(--ease)}
+.view.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* Sections */
+section.block{padding:clamp(64px,9vw,120px) 0}
+.section-head{max-width:720px;margin-bottom:56px}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.section-head .eyebrow{margin-bottom:16px;display:inline-block}
+.section-head p{margin-top:18px}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{position:relative;background:var(--dark);color:var(--dark-text);overflow:hidden;padding:clamp(112px,12vw,160px) 0 clamp(72px,9vw,120px)}
+.hero::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(900px 500px at 78% -8%,rgba(109,90,240,.34),transparent 60%),
+    radial-gradient(760px 460px at 8% 108%,rgba(31,211,196,.22),transparent 60%)}
+.hero .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(circle at 50% 40%,#000,transparent 78%)}
+.hero .container{position:relative;z-index:2}
+.hero-badge{display:inline-flex;align-items:center;gap:.55rem;padding:.4rem .9rem .4rem .5rem;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:.83rem;color:var(--dark-muted);margin-bottom:28px}
+.hero-badge b{background:var(--grad);color:#fff;padding:.15rem .6rem;border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.04em}
+.hero h1{color:#fff;max-width:15ch}
+.hero h1 .accent{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero .lead{color:var(--dark-muted);max-width:52ch;margin-top:26px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px}
+.hero-stats{display:flex;gap:40px;flex-wrap:wrap;margin-top:56px;padding-top:36px;border-top:1px solid rgba(255,255,255,.1)}
+.hero-stats .s .n{font-family:'Space Grotesk';font-size:2rem;font-weight:600;color:#fff}
+.hero-stats .s .n span{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero-stats .s .l{font-size:.85rem;color:var(--dark-muted);margin-top:2px}
+
+/* Trust bar */
+.trust{padding:34px 0;border-top:1px solid var(--line);background:var(--bg)}
+.trust p{text-align:center;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:22px;font-weight:600}
+.trust-logos{display:flex;align-items:center;justify-content:center;gap:clamp(28px,5vw,64px);flex-wrap:wrap;opacity:.72}
+.trust-logos .lg{font-family:'Space Grotesk';font-weight:700;font-size:1.15rem;color:var(--text-2);display:flex;align-items:center;gap:.5rem;filter:grayscale(1);opacity:.85}
+.trust-logos .lg .dot{width:12px;height:12px;border-radius:3px;background:var(--text-2)}
+
+/* Problem list */
+.dark-block{background:var(--dark);color:var(--dark-text)}
+.dark-block .eyebrow{color:var(--accent-2)}
+.dark-block h2,.dark-block h3{color:#fff}
+.dark-block .lead{color:var(--dark-muted)}
+.prob-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+.prob{display:flex;gap:16px;padding:24px;border-radius:var(--r);background:var(--dark-panel);border:1px solid var(--dark-line)}
+.prob .ic{width:40px;height:40px;border-radius:11px;flex:none;display:grid;place-items:center;background:rgba(255,90,90,.12);color:#ff7a7a}
+.prob .ic svg{width:20px;height:20px}
+.prob h4{font-size:1.05rem;color:#fff;margin-bottom:5px;font-family:'Inter';font-weight:600;letter-spacing:0}
+.prob p{font-size:.92rem;color:var(--dark-muted);line-height:1.5}
+
+/* Ops explorer (tabs) */
+.ops-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:34px}
+.ops-tab{padding:.7rem 1.3rem;border-radius:999px;border:1px solid var(--line);background:var(--bg);font-weight:600;font-size:.95rem;color:var(--text-2);cursor:pointer;transition:.22s var(--ease);font-family:inherit}
+.ops-tab:hover{border-color:var(--accent);color:var(--text)}
+.ops-tab.active{background:var(--text);color:#fff;border-color:var(--text)}
+.ops-panel{display:none;grid-template-columns:1.05fr 1fr;gap:44px;align-items:center}
+.ops-panel.active{display:grid;animation:fade .4s var(--ease)}
+.ops-panel .tag{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:14px}
+.ops-panel h3{font-size:1.9rem;margin-bottom:14px}
+.ops-panel ul{list-style:none;margin-top:22px;display:grid;gap:12px}
+.ops-panel li{display:flex;gap:12px;align-items:flex-start;font-size:.98rem;color:var(--text-2)}
+.ops-panel li svg{width:20px;height:20px;flex:none;color:var(--accent-2);margin-top:1px}
+.ops-visual{border-radius:var(--r-lg);padding:28px;background:var(--dark);border:1px solid var(--dark-line);color:var(--dark-text);min-height:340px;position:relative;overflow:hidden}
+.ops-visual::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 300px at 80% 0,rgba(109,90,240,.28),transparent 60%)}
+.ops-visual .win-head{display:flex;gap:7px;margin-bottom:22px;position:relative}
+.ops-visual .win-head i{width:11px;height:11px;border-radius:50%;background:var(--dark-line);display:block}
+.metric-row{position:relative;display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--dark-line)}
+.metric-row:last-child{border-bottom:0}
+.metric-row .k{font-size:.9rem;color:var(--dark-muted)}
+.metric-row .v{font-family:'Space Grotesk';font-weight:600;font-size:1.15rem;color:#fff}
+.metric-row .v.good{color:var(--accent-2)}
+.bar{height:7px;border-radius:99px;background:var(--dark-line);margin-top:8px;overflow:hidden;position:relative}
+.bar span{position:absolute;inset:0 auto 0 0;border-radius:99px;background:var(--grad)}
+
+/* Metrics band */
+.metrics{background:var(--grad);color:#fff;position:relative;overflow:hidden}
+.metrics::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 400px at 90% 120%,rgba(255,255,255,.18),transparent 60%)}
+.metrics .container{position:relative}
+.metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.metric{padding:8px 0}
+.metric .big{font-family:'Space Grotesk';font-weight:700;font-size:clamp(2.4rem,4.5vw,3.4rem);line-height:1;letter-spacing:-.03em}
+.metric .lbl{margin-top:10px;font-size:.98rem;color:rgba(255,255,255,.86)}
+.metrics-note{text-align:center;margin-top:40px;font-size:.82rem;color:rgba(255,255,255,.68)}
+
+/* Product cards */
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-lg);padding:32px;transition:.3s var(--ease);position:relative;overflow:hidden;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent}
+.card .status{position:absolute;top:22px;right:22px;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.28rem .6rem;border-radius:999px}
+.status.live{background:rgba(31,211,196,.14);color:#0c8a7e}
+.status.early{background:rgba(109,90,240,.12);color:var(--accent-ink)}
+.status.soon{background:var(--bg-soft);color:var(--muted)}
+.card .cic{width:52px;height:52px;border-radius:14px;background:var(--grad-soft);display:grid;place-items:center;margin-bottom:20px;color:var(--accent-ink)}
+.card .cic svg{width:26px;height:26px}
+.card h3{font-size:1.3rem;margin-bottom:10px}
+.card p{color:var(--text-2);font-size:.97rem;flex:1}
+.card .flist{list-style:none;margin:18px 0 22px;display:grid;gap:9px}
+.card .flist li{display:flex;gap:10px;font-size:.9rem;color:var(--text-2)}
+.card .flist svg{width:18px;height:18px;color:var(--accent-2);flex:none}
+
+/* How it works */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:step}
+.step{position:relative;padding:32px;border-radius:var(--r-lg);background:var(--bg-soft);border:1px solid var(--line-2)}
+.step::before{counter-increment:step;content:"0" counter(step);font-family:'Space Grotesk';font-weight:700;font-size:2.4rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:block;margin-bottom:16px}
+.step h3{font-size:1.2rem;margin-bottom:8px}
+.step p{color:var(--text-2);font-size:.95rem}
+
+/* Feature split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.split.reverse .split-media{order:-1}
+.split-media{border-radius:var(--r-xl);overflow:hidden;background:var(--dark);border:1px solid var(--dark-line);padding:26px;color:#fff;position:relative}
+.split-media::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 260px at 20% 0,rgba(31,211,196,.25),transparent 60%)}
+.feat-list{list-style:none;display:grid;gap:20px;margin-top:26px}
+.feat-list li{display:flex;gap:16px}
+.feat-list .fi{width:44px;height:44px;flex:none;border-radius:12px;background:var(--grad-soft);display:grid;place-items:center;color:var(--accent-ink)}
+.feat-list .fi svg{width:22px;height:22px}
+.feat-list h4{font-size:1.05rem;margin-bottom:3px;font-family:'Inter';font-weight:600;letter-spacing:0}
+.feat-list p{font-size:.93rem;color:var(--text-2)}
+
+/* dashboard mock */
+.dash{position:relative;z-index:1}
+.dash-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.dash-top .t{font-family:'Space Grotesk';font-weight:600}
+.dash-top .pill{font-size:.72rem;padding:.25rem .7rem;border-radius:999px;background:rgba(31,211,196,.16);color:var(--accent-2);font-weight:600}
+.dash-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.dc{background:rgba(255,255,255,.04);border:1px solid var(--dark-line);border-radius:12px;padding:14px}
+.dc .l{font-size:.75rem;color:var(--dark-muted)}
+.dc .n{font-family:'Space Grotesk';font-weight:600;font-size:1.5rem;color:#fff;margin-top:4px}
+.dc .n small{font-size:.8rem;color:var(--accent-2);font-family:'Inter';font-weight:600}
+.spark{display:flex;align-items:flex-end;gap:4px;height:60px;margin-top:14px}
+.spark i{flex:1;background:var(--grad);border-radius:3px 3px 0 0;opacity:.85;display:block}
+
+/* Testimonial */
+.quote{max-width:900px;margin:0 auto;text-align:center}
+.quote .qmark{font-family:'Space Grotesk';font-size:4rem;line-height:.5;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.quote blockquote{font-family:'Space Grotesk';font-weight:500;font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.35;letter-spacing:-.02em;margin:20px 0 28px}
+.quote .who{display:flex;align-items:center;justify-content:center;gap:14px}
+.quote .av{width:48px;height:48px;border-radius:50%;background:var(--grad);display:grid;place-items:center;color:#fff;font-weight:700;font-family:'Space Grotesk'}
+.quote .who .nm{font-weight:600;text-align:left}
+.quote .who .rl{font-size:.88rem;color:var(--muted);text-align:left}
+
+/* Security strip */
+.sec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.sec{padding:24px;border-radius:var(--r);border:1px solid var(--line);background:var(--bg);text-align:center}
+.sec .si{width:44px;height:44px;margin:0 auto 12px;border-radius:12px;background:var(--bg-soft);display:grid;place-items:center;color:var(--accent-ink)}
+.sec .si svg{width:22px;height:22px}
+.sec h4{font-size:1rem;font-family:'Inter';font-weight:600;letter-spacing:0;margin-bottom:4px}
+.sec p{font-size:.85rem;color:var(--muted)}
+
+/* CTA band */
+.cta{background:var(--dark);color:#fff;position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 420px at 15% -20%,rgba(109,90,240,.4),transparent 60%),radial-gradient(600px 400px at 90% 120%,rgba(31,211,196,.28),transparent 60%)}
+.cta .container{position:relative;text-align:center;max-width:760px}
+.cta h2{color:#fff;margin-bottom:18px}
+.cta p{color:var(--dark-muted);font-size:1.1rem;margin-bottom:32px}
+.cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* Footer */
+footer{background:var(--dark);color:var(--dark-muted);border-top:1px solid var(--dark-line);padding:64px 0 32px}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid var(--dark-line)}
+.foot-brand .brand{color:#fff;margin-bottom:16px}
+.foot-brand .brand-logo{height:34px}
+.foot-brand p{font-size:.92rem;max-width:32ch;color:var(--dark-muted)}
+.foot-col h5{color:#fff;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;font-family:'Inter';font-weight:600}
+.foot-col a{display:block;font-size:.94rem;color:var(--dark-muted);padding:5px 0;transition:.2s}
+.foot-col a:hover{color:#fff}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;flex-wrap:wrap;gap:14px;font-size:.86rem}
+.foot-bottom .socials{display:flex;gap:12px}
+.foot-bottom .socials a{width:34px;height:34px;border-radius:9px;border:1px solid var(--dark-line);display:grid;place-items:center;color:var(--dark-muted);transition:.2s}
+.foot-bottom .socials a:hover{color:#fff;border-color:var(--dark-muted)}
+.foot-bottom .socials svg{width:16px;height:16px}
+
+/* Page hero (interior) */
+.page-hero{background:var(--dark);color:#fff;padding:clamp(116px,10vw,140px) 0 clamp(56px,7vw,90px);position:relative;overflow:hidden}
+.page-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(760px 440px at 82% -10%,rgba(109,90,240,.3),transparent 60%)}
+.page-hero .container{position:relative;max-width:760px}
+.page-hero h1{color:#fff;margin:16px 0 20px}
+.page-hero .lead{color:var(--dark-muted)}
+.page-hero .eyebrow{color:var(--accent-2)}
+
+/* Reveal animation */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:.88rem;font-weight:600;margin-bottom:7px}
+.field input,.field select,.field textarea{width:100%;padding:.85rem 1rem;border:1px solid var(--line);border-radius:var(--r-sm);font-family:inherit;font-size:.96rem;background:var(--bg);transition:.2s;color:var(--text)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(109,90,240,.12)}
+.field textarea{resize:vertical;min-height:120px}
+.form-note{font-size:.82rem;color:var(--muted);margin-top:6px}
+.contact-info{display:grid;gap:22px}
+.ci-item{display:flex;gap:16px}
+.ci-item .cii{width:46px;height:46px;flex:none;border-radius:12px;background:var(--grad-soft);display:grid;place-items:center;color:var(--accent-ink)}
+.ci-item .cii svg{width:22px;height:22px}
+.ci-item h4{font-size:1rem;font-family:'Inter';font-weight:600;letter-spacing:0;margin-bottom:2px}
+.ci-item p,.ci-item a{font-size:.94rem;color:var(--text-2)}
+.form-success{display:none;padding:20px;border-radius:var(--r);background:rgba(31,211,196,.1);border:1px solid rgba(31,211,196,.3);color:#0c7a70;font-weight:500;margin-top:8px}
+.form-success.show{display:block;animation:fade .4s}
+
+/* Values / company */
+.val-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.val{padding:28px;border-radius:var(--r-lg);border:1px solid var(--line);background:var(--bg)}
+.val .vi{width:48px;height:48px;border-radius:12px;background:var(--grad-soft);display:grid;place-items:center;color:var(--accent-ink);margin-bottom:16px}
+.val .vi svg{width:24px;height:24px}
+.val h3{font-size:1.15rem;margin-bottom:8px}
+.val p{color:var(--text-2);font-size:.95rem}
+.tl{display:grid;gap:0;max-width:760px}
+.tl-item{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid var(--line)}
+.tl-item .yr{font-family:'Space Grotesk';font-weight:700;font-size:1.3rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.tl-item h4{font-size:1.1rem;margin-bottom:6px;font-family:'Inter';font-weight:600;letter-spacing:0}
+.tl-item p{color:var(--text-2);font-size:.95rem}
+
+/* Partners */
+.partner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.partner{padding:28px;border-radius:var(--r-lg);border:1px solid var(--line);background:var(--bg);transition:.3s var(--ease)}
+.partner:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.partner .pl{font-family:'Space Grotesk';font-weight:700;font-size:1.2rem;margin-bottom:10px;display:flex;align-items:center;gap:.55rem}
+.partner .pl .pd{width:30px;height:30px;border-radius:8px;background:var(--grad-soft);display:grid;place-items:center;color:var(--accent-ink);font-size:.9rem}
+.partner p{font-size:.92rem;color:var(--text-2)}
+.pcat-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.pcat{padding:30px;border-radius:var(--r-lg);border:1px solid var(--line);background:var(--bg);transition:.3s var(--ease);display:flex;flex-direction:column}
+.pcat:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.plogos{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0 18px}
+.plogo{display:flex;align-items:center;gap:.55rem;font-family:'Space Grotesk';font-weight:700;font-size:1.02rem;padding:.6rem 1.05rem;border-radius:12px;background:var(--bg-soft);border:1px solid var(--line-2);color:var(--text)}
+.plogo .pd{width:26px;height:26px;border-radius:7px;background:var(--grad);display:grid;place-items:center;color:#fff;font-size:.82rem;font-weight:700}
+.pcat p{font-size:.94rem;color:var(--text-2);margin-top:auto}
+.tier{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);background:rgba(109,90,240,.1);padding:.25rem .6rem;border-radius:999px;margin-bottom:14px}
+
+/* FAQ */
+.faq{max-width:800px;margin:0 auto}
+.qa{border-bottom:1px solid var(--line)}
+.qa button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;background:none;border:none;cursor:pointer;font-family:'Space Grotesk';font-weight:600;font-size:1.1rem;text-align:left;color:var(--text)}
+.qa button .pm{width:26px;height:26px;flex:none;border-radius:8px;border:1px solid var(--line);display:grid;place-items:center;transition:.3s;font-size:1.2rem;color:var(--accent-ink)}
+.qa.open button .pm{background:var(--text);color:#fff;border-color:var(--text);transform:rotate(45deg)}
+.qa .ans{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.qa .ans p{padding:0 0 22px;color:var(--text-2)}
+
+/* Responsive */
+@media(max-width:940px){
+  .nav-links,.nav-cta .login{display:none}
+  .burger{display:flex}
+  .prob-grid,.metrics-grid,.prod-grid,.steps,.sec-grid,.val-grid,.partner-grid,.pcat-grid{grid-template-columns:1fr}
+  .metrics-grid{grid-template-columns:1fr 1fr}
+  .split,.ops-panel.active,.contact-grid{grid-template-columns:1fr;gap:36px}
+  .split.reverse .split-media{order:0}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .tl-item{grid-template-columns:80px 1fr;gap:16px}
+  .mobile-menu.open{display:flex}
+}
+@media(max-width:560px){
+  .metrics-grid,.foot-grid{grid-template-columns:1fr}
+  .hero-stats{gap:24px}
+  .hero-actions,.cta-actions{width:100%}
+  .hero-actions .btn,.cta-actions .btn{width:100%;justify-content:center;white-space:normal;text-align:center}
+  .nav .nav-cta .btn-accent{display:none}
+}
+
+/* Mobile menu */
+.mobile-menu{display:none;position:fixed;inset:74px 0 0;z-index:99;background:var(--dark);flex-direction:column;padding:24px;gap:6px;animation:fade .3s}
+.mobile-menu a{padding:16px;font-size:1.15rem;font-weight:600;color:#fff;border-bottom:1px solid var(--dark-line)}
+.mobile-menu .m-cta{margin-top:20px;display:flex;flex-direction:column;gap:12px}
+.mobile-menu .m-cta .btn{justify-content:center;width:100%}
+.no-scroll{overflow:hidden}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="header">
+  <div class="container nav">
+    <div class="brand" data-nav="home"><img class="brand-logo" src="/logo-horizontal.png" width="1088" height="220" alt="Aivilo" /></div>
+    <ul class="nav-links">
+      <li><a href="/services" data-nav="services">Services</a></li>
+      <li><a href="/platform" data-nav="platform">Platform</a></li>
+      <li><a href="/partners" data-nav="partners">Partners</a></li>
+      <li><a href="/company" data-nav="company">Company</a></li>
+      <li><a href="/contact" data-nav="contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="login" href="/contact" data-nav="contact">Log in</a>
+      <a class="btn btn-accent" href="/services" data-nav="services">Book an Assessment</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="/services" data-nav="services">Services</a>
+  <a href="/platform" data-nav="platform">Platform</a>
+  <a href="/partners" data-nav="partners">Partners</a>
+  <a href="/company" data-nav="company">Company</a>
+  <a href="/contact" data-nav="contact">Contact</a>
+  <div class="m-cta">
+    <a class="btn btn-light" href="/contact" data-nav="contact">Log in</a>
+    <a class="btn btn-accent" href="/services" data-nav="services">Book an Assessment</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ==================================================== -->
+<!-- ================== HOME VIEW ======================= -->
+<!-- ==================================================== -->
+<section class="view active" id="view-home">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="grid-bg"></div>
+    <div class="container">
+      <div class="hero-badge reveal"><b>SERVICES</b> AI Readiness Assessment &amp; managed AI operations</div>
+      <h1 class="h-xl reveal d1">Get AI out of pilots and into <span class="accent">production ROI.</span></h1>
+      <p class="lead reveal d2">Aivilo is an AI services partner for healthcare and other regulated industries. We prove where the value is, do the engineering to ship it, and run it in production — so your AI reaches the business faster, and for less.</p>
+      <div class="hero-actions reveal d3">
+        <a class="btn btn-accent" href="/services" data-nav="services">Book an AI Readiness Assessment
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-light" href="/services" data-nav="services">Explore our services</a>
+      </div>
+      <div class="hero-stats reveal d4">
+        <div class="s"><div class="n"><span>90</span>-day</div><div class="l">From assessment to a costed production roadmap</div></div>
+        <div class="s"><div class="n">Up to <span>40%</span></div><div class="l">Lower AI run-cost after our optimization</div></div>
+        <div class="s"><div class="n">Built for <span>regulated</span></div><div class="l">Security, governance &amp; compliance built in by default</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust -->
+  <div class="trust">
+    <div class="container">
+      <p>Trusted by engineering leaders in healthcare and other regulated industries</p>
+      <div class="trust-logos">
+        <div class="lg"><span class="dot"></span>Northwind Health</div>
+        <div class="lg"><span class="dot"></span>Vale Health Systems</div>
+        <div class="lg"><span class="dot"></span>Meridian Bank</div>
+        <div class="lg"><span class="dot"></span>Calyx Insurance</div>
+        <div class="lg"><span class="dot"></span>Helios Labs</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Problem -->
+  <section class="block dark-block">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow reveal">Why AI stalls</span>
+        <h2 class="h-lg reveal d1">Most AI budgets buy pilots.<br>Very few buy production ROI.</h2>
+        <p class="lead reveal d2">Teams ship an impressive demo and then hit a wall. The gap between a prototype and a governed, cost-efficient, reliable production system is where most AI investment quietly disappears — and where our services go to work.</p>
+      </div>
+      <div class="prob-grid">
+        <div class="prob reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v8m-4-4h8M22 12a10 10 0 11-20 0 10 10 0 0120 0z"/></svg></div>
+          <div><h4>Pilots stall before production</h4><p>The demo works, but no one owns the path to a governed, reliable, cost-controlled system in production.</p></div>
+        </div>
+        <div class="prob reveal d1">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 14l3-3 3 3 5-6"/></svg></div>
+          <div><h4>ROI is impossible to prove</h4><p>Spend climbs, but nobody can tie AI investment to a business outcome leadership will keep funding.</p></div>
+        </div>
+        <div class="prob reveal d2">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+          <div><h4>Costs scale faster than value</h4><p>Token and infrastructure spend grows with no attribution, right-sizing, or budget guardrails to contain it.</p></div>
+        </div>
+        <div class="prob reveal d3">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div><h4>Compliance blocks the launch</h4><p>Risk and audit teams can't get answers on data flow and decisions, so production keeps slipping.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ops explorer -->
+  <section class="block">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow reveal">Full-stack coverage</span>
+        <h2 class="h-lg reveal d1">We work across all four layers of your AI stack</h2>
+        <p class="lead reveal d2">Real ROI comes from the whole stack, not just the model. Our engineers assess, optimize, and operate across all four layers — so cost, reliability, and governance are handled end to end.</p>
+      </div>
+
+      <div class="ops-tabs reveal">
+        <button class="ops-tab active" data-ops="cloud">CloudOps</button>
+        <button class="ops-tab" data-ops="data">DataOps</button>
+        <button class="ops-tab" data-ops="genai">GenAIOps</button>
+        <button class="ops-tab" data-ops="agent">AgentOps</button>
+      </div>
+
+      <div class="ops-panel active" data-panel="cloud">
+        <div>
+          <span class="tag">Infrastructure &amp; cost</span>
+          <h3>Run efficient, secure AI infrastructure</h3>
+          <p class="muted">Keep the compute layer under control with real-time cost attribution and security guardrails that scale with you.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>FinOps attribution by team, model, and workload</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Right-sizing and idle-resource detection</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Security guardrails across multi-cloud environments</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Budgets and anomaly alerts before spend runs away</li>
+          </ul>
+        </div>
+        <div class="ops-visual">
+          <div class="win-head"><i></i><i></i><i></i></div>
+          <div class="metric-row"><span class="k">Monthly cloud spend</span><span class="v">$182.4k</span></div>
+          <div class="bar"><span style="width:64%"></span></div>
+          <div class="metric-row"><span class="k">Attributed to teams</span><span class="v good">100%</span></div>
+          <div class="metric-row"><span class="k">Idle resources reclaimed</span><span class="v good">-31%</span></div>
+          <div class="metric-row"><span class="k">Policy violations</span><span class="v">0 open</span></div>
+        </div>
+      </div>
+
+      <div class="ops-panel" data-panel="data">
+        <div>
+          <span class="tag">Pipelines &amp; compliance</span>
+          <h3>Trustworthy data feeding every model</h3>
+          <p class="muted">Reliable pipelines with compliance and PII protection built in, so what reaches your models is clean and defensible.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Pipeline reliability monitoring and freshness SLAs</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>PII detection, masking, and lineage tracking</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Compliance frameworks mapped to your controls</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>End-to-end data observability</li>
+          </ul>
+        </div>
+        <div class="ops-visual">
+          <div class="win-head"><i></i><i></i><i></i></div>
+          <div class="metric-row"><span class="k">Pipeline uptime</span><span class="v good">99.9%</span></div>
+          <div class="bar"><span style="width:99%"></span></div>
+          <div class="metric-row"><span class="k">PII fields masked</span><span class="v">3,412</span></div>
+          <div class="metric-row"><span class="k">Data freshness</span><span class="v good">On SLA</span></div>
+          <div class="metric-row"><span class="k">Lineage coverage</span><span class="v good">Complete</span></div>
+        </div>
+      </div>
+
+      <div class="ops-panel" data-panel="genai">
+        <div>
+          <span class="tag">Models &amp; quality</span>
+          <h3>Know how every model behaves</h3>
+          <p class="muted">Monitor behavior, cost, and quality across every model and prompt in production — before your users feel a regression.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Model behavior and quality monitoring</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Token consumption and cost-per-request tracking</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Prompt catalog with versioning and evals</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Latency and reliability analysis</li>
+          </ul>
+        </div>
+        <div class="ops-visual">
+          <div class="win-head"><i></i><i></i><i></i></div>
+          <div class="metric-row"><span class="k">Avg response quality</span><span class="v good">96.2%</span></div>
+          <div class="bar"><span style="width:96%"></span></div>
+          <div class="metric-row"><span class="k">Cost / 1k requests</span><span class="v">$1.84</span></div>
+          <div class="metric-row"><span class="k">p95 latency</span><span class="v good">720ms</span></div>
+          <div class="metric-row"><span class="k">Prompts under eval</span><span class="v">148</span></div>
+        </div>
+      </div>
+
+      <div class="ops-panel" data-panel="agent">
+        <div>
+          <span class="tag">Agents &amp; safety</span>
+          <h3>Trace and govern autonomous agents</h3>
+          <p class="muted">See every step an agent takes, catch failures and hallucinations, and enforce safety guardrails around tool use.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Full agent workflow and reasoning traces</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Tool-call visibility and permission control</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Failure and hallucination detection</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Safety guardrails and human-in-the-loop gates</li>
+          </ul>
+        </div>
+        <div class="ops-visual">
+          <div class="win-head"><i></i><i></i><i></i></div>
+          <div class="metric-row"><span class="k">Agent runs traced</span><span class="v good">100%</span></div>
+          <div class="bar"><span style="width:100%"></span></div>
+          <div class="metric-row"><span class="k">Tool calls audited</span><span class="v">28,904</span></div>
+          <div class="metric-row"><span class="k">Guardrail catches</span><span class="v good">142</span></div>
+          <div class="metric-row"><span class="k">Escalated to human</span><span class="v">37</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metrics band -->
+  <section class="block metrics">
+    <div class="container">
+      <div class="metrics-grid">
+        <div class="metric reveal"><div class="big" data-count="40" data-suffix="%">0%</div><div class="lbl">Lower AI run-cost after our optimization</div></div>
+        <div class="metric reveal d1"><div class="big" data-count="3" data-suffix="&times;">0&times;</div><div class="lbl">Faster path from pilot to production</div></div>
+        <div class="metric reveal d2"><div class="big" data-count="90" data-suffix="-day">0-day</div><div class="lbl">From kickoff to a costed production roadmap</div></div>
+        <div class="metric reveal d3"><div class="big" data-count="100" data-suffix="%">0%</div><div class="lbl">Traceable &amp; auditable for compliance teams</div></div>
+      </div>
+      <p class="metrics-note">Figures are representative outcomes shown for illustration in this preview.</p>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="block">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow reveal">Our services</span>
+        <h2 class="h-lg reveal d1">Services that get AI into production — and keep it there</h2>
+        <p class="lead reveal d2">Start by proving where the ROI is, bring in expert engineers to ship it, and let us run it in production. Three ways to work with Aivilo, one accountable partner.</p>
+      </div>
+      <div class="prod-grid">
+        <div class="card reveal">
+          <span class="status live">Available now</span>
+          <div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+          <h3>AI Readiness Assessment</h3>
+          <p>A fixed-scope diagnostic that scores your maturity, quantifies the ROI, and hands you a costed 90-day roadmap to production.</p>
+          <ul class="flist">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Maturity scoring across four layers</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>ROI, cost, and risk analysis</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Costed 90-day production roadmap</li>
+          </ul>
+          <a class="textlink" href="/services" data-nav="services">Get assessed <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="card reveal d1">
+          <span class="status live">Available now</span>
+          <div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+          <h3>Professional Services</h3>
+          <p>Senior AI engineers who execute alongside your team — designing, building, and hardening your priority use cases all the way to production.</p>
+          <ul class="flist">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Solution design &amp; implementation</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Data, cloud &amp; model engineering</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Production hardening &amp; governance</li>
+          </ul>
+          <a class="textlink" href="/services" data-nav="services">See professional services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="card reveal d2">
+          <span class="status early">Now onboarding</span>
+          <div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <h3>Managed Services</h3>
+          <p>We run your AI in production for you — monitoring, cost optimization, and governance as an ongoing service, so your team stays on the roadmap.</p>
+          <ul class="flist">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Proactive monitoring &amp; incident response</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Ongoing cost &amp; FinOps optimization</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Governance, compliance &amp; ROI reviews</li>
+          </ul>
+          <a class="textlink" href="/services" data-nav="services">See managed services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="reveal d3" style="margin-top:28px;display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center;padding:20px 24px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg-soft)">
+        <span style="font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);background:rgba(109,90,240,.1);padding:.3rem .7rem;border-radius:999px">In development</span>
+        <span class="muted" style="font-size:.98rem">We're also building <b style="color:var(--text)">Lens</b> — the observability &amp; governance tooling that powers our managed-services engagements, now in early access with design partners.</span>
+        <a class="textlink" href="/platform" data-nav="platform">Preview Lens <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="block" style="background:var(--bg-soft)">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow reveal">How we work</span>
+        <h2 class="h-lg reveal d1">From stalled pilot to production ROI in three moves</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><h3>Assess</h3><p>We benchmark your maturity, quantify the ROI, and hand you a costed, prioritized 90-day roadmap to production.</p></div>
+        <div class="step reveal d1"><h3>Implement</h3><p>Our senior engineers build, integrate, and harden your highest-value use cases — shipping them to governed production.</p></div>
+        <div class="step reveal d2"><h3>Operate</h3><p>Managed services keep it reliable, efficient, and compliant — with continuous cost optimization and ROI reviews.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="block">
+    <div class="container">
+      <div class="quote reveal">
+        <div class="qmark">&ldquo;</div>
+        <blockquote>Aivilo got our two highest-value AI use cases into production in a quarter and showed us exactly what they'd save. It's the first time AI has paid for itself here.</blockquote>
+        <div class="who">
+          <div class="av">RK</div>
+          <div><div class="nm">Ravi Krishnan</div><div class="rl">VP of Engineering, Northwind Health</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security -->
+  <section class="block" style="background:var(--bg-soft)">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow reveal">Built for regulated industries</span>
+        <h2 class="h-md reveal d1">Security and compliance are the default, not an add-on</h2>
+      </div>
+      <div class="sec-grid">
+        <div class="sec reveal"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4>Enterprise security</h4><p>SSO, RBAC, and encryption in transit and at rest.</p></div>
+        <div class="sec reveal d1"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><h4>Compliance ready</h4><p>Controls mapped to SOC 2, HIPAA, and GDPR.</p></div>
+        <div class="sec reveal d2"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17l6-6-6-6M12 19h8"/></svg></div><h4>Full auditability</h4><p>Every decision and data flow is traceable.</p></div>
+        <div class="sec reveal d3"><div class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1V8a5 5 0 00-10 0v2H6a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2v-8a2 2 0 00-2-2z"/></svg></div><h4>Your cloud, your data</h4><p>Deploys into your environment across major clouds.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="block cta">
+    <div class="container">
+      <h2 class="h-lg reveal">Ready to prove the ROI of your AI?</h2>
+      <p class="reveal d1">Start with an AI Readiness Assessment and we'll show you exactly where the value is, what it costs, and how fast we can get it into production.</p>
+      <div class="cta-actions reveal d2">
+        <a class="btn btn-accent" href="/services" data-nav="services">Book an Assessment</a>
+        <a class="btn btn-light" href="/contact" data-nav="contact">Talk to our team</a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ==================================================== -->
+<!-- ================ PLATFORM VIEW ===================== -->
+<!-- ==================================================== -->
+<section class="view" id="view-platform">
+  <div class="page-hero">
+    <div class="container">
+      <div class="hero-badge reveal"><b>IN DEVELOPMENT</b> Early access with design partners</div>
+      <span class="eyebrow reveal d1">The Lens Platform</span>
+      <h1 class="h-xl reveal d2">The tooling behind our managed services</h1>
+      <p class="lead reveal d3">Lens is the observability and governance layer we build our managed-services engagements on — one view of cost, quality, reliability, and compliance across your whole AI stack. It's in active development and early access with design partners today.</p>
+      <div class="hero-actions reveal d3" style="margin-top:32px">
+        <a class="btn btn-accent" href="/contact" data-nav="contact">Request early access</a>
+        <a class="btn btn-light" href="/services" data-nav="services">Book an assessment</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dashboard split -->
+  <section class="block">
+    <div class="container">
+      <div class="split">
+        <div class="reveal">
+          <span class="eyebrow">Unified visibility</span>
+          <h2 class="h-md" style="margin:14px 0 16px">Everything you run, on one screen</h2>
+          <p class="lead" style="font-size:1.08rem">Stop stitching together five tools and three dashboards. Lens brings CloudOps, DataOps, GenAIOps, and AgentOps into a single view your whole team can trust.</p>
+          <ul class="feat-list">
+            <li><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 3 5-6"/></svg></div><div><h4>Real-time cost &amp; FinOps</h4><p>Live spend, attribution, and anomaly alerts across models and clouds.</p></div></li>
+            <li><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div><div><h4>Trace &amp; session drill-down</h4><p>Follow any request from prompt to tool call to response.</p></div></li>
+            <li><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>Governance &amp; maturity</h4><p>Continuous scoring against your policies and compliance controls.</p></div></li>
+          </ul>
+        </div>
+        <div class="split-media reveal d1">
+          <div class="dash">
+            <div class="dash-top"><span class="t">Lens — Overview</span><span class="pill">● Live</span></div>
+            <div class="dash-cards">
+              <div class="dc"><div class="l">AI spend (30d)</div><div class="n">$182k <small>-31%</small></div></div>
+              <div class="dc"><div class="l">Quality score</div><div class="n">96.2% <small>+2.1</small></div></div>
+              <div class="dc"><div class="l">Pipeline uptime</div><div class="n">99.9%</div></div>
+              <div class="dc"><div class="l">Agents traced</div><div class="n">100%</div></div>
+            </div>
+            <div class="dc">
+              <div class="l">Requests / hour</div>
+              <div class="spark">
+                <i style="height:40%"></i><i style="height:55%"></i><i style="height:48%"></i><i style="height:70%"></i><i style="height:62%"></i><i style="height:85%"></i><i style="height:78%"></i><i style="height:95%"></i><i style="height:88%"></i><i style="height:100%"></i><i style="height:74%"></i><i style="height:82%"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Four ops detail cards -->
+  <section class="block" style="background:var(--bg-soft)">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow reveal">Four layers, one platform</span>
+        <h2 class="h-lg reveal d1">Coverage across every operational layer</h2>
+      </div>
+      <div class="prod-grid" style="grid-template-columns:1fr 1fr">
+        <div class="card reveal"><div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg></div><h3>CloudOps</h3><p>Infrastructure efficiency, FinOps attribution, security guardrails, and cost control across multi-cloud environments.</p></div>
+        <div class="card reveal d1"><div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg></div><h3>DataOps</h3><p>Data pipeline reliability, compliance frameworks, PII protection, and end-to-end observability.</p></div>
+        <div class="card reveal d2"><div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 013 3 3 3 0 011.5 5.6A3 3 0 0115 16H9a3 3 0 01-1.5-5.4A3 3 0 019 5a3 3 0 013-3zM12 16v6"/></svg></div><h3>GenAIOps</h3><p>Model behavior monitoring, token consumption tracking, prompt cataloging, and latency analysis.</p></div>
+        <div class="card reveal d3"><div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M8 2h8M9 14h.01M15 14h.01"/></svg></div><h3>AgentOps</h3><p>Agent workflow tracing, tool-call visibility, failure and hallucination detection, and safety guardrails.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block">
+    <div class="container">
+      <div class="section-head center"><span class="eyebrow reveal">Questions</span><h2 class="h-md reveal d1">Common questions about Lens</h2></div>
+      <div class="faq">
+        <div class="qa"><button>How does Lens connect to my stack?<span class="pm">+</span></button><div class="ans"><p>Lens uses lightweight instrumentation and native integrations with your cloud providers, data platforms, model gateways, and agent frameworks. Most teams see data flowing within days, not months.</p></div></div>
+        <div class="qa"><button>Does my data leave my environment?<span class="pm">+</span></button><div class="ans"><p>No. Lens is designed to deploy into your own cloud environment. Your data and traces stay under your control, with governance and access policies you define.</p></div></div>
+        <div class="qa"><button>Do I need to replace my existing tools?<span class="pm">+</span></button><div class="ans"><p>No. Lens is the connective tissue across the tools you already use — it unifies their signals into one control plane rather than asking you to rip and replace.</p></div></div>
+        <div class="qa"><button>When will Lens be generally available?<span class="pm">+</span></button><div class="ans"><p>Lens is currently in early access with a select group of design partners. Request access and we'll walk you through the roadmap and onboarding.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block cta">
+    <div class="container">
+      <h2 class="h-lg reveal">Want Lens on your own stack?</h2>
+      <p class="reveal d1">Lens ships today as part of a managed-services engagement, or join the design-partner early access program for a guided walkthrough tailored to your environment.</p>
+      <div class="cta-actions reveal d2"><a class="btn btn-accent" href="/contact" data-nav="contact">Request early access</a><a class="btn btn-light" href="/services" data-nav="services">Explore services</a></div>
+    </div>
+  </section>
+</section>
+
+<!-- ==================================================== -->
+<!-- ================ SERVICES VIEW ===================== -->
+<!-- ==================================================== -->
+<section class="view" id="view-services">
+  <div class="page-hero">
+    <div class="container">
+      <span class="eyebrow reveal">Services</span>
+      <h1 class="h-xl reveal d1">The services that turn AI investment into production ROI</h1>
+      <p class="lead reveal d2">Aivilo is a services-first partner. We start by proving where the value is, bring senior engineers to build it, and run it in production for you — so your AI reaches the business faster, and for less.</p>
+      <div class="hero-actions reveal d3" style="margin-top:32px"><a class="btn btn-accent" href="/contact" data-nav="contact">Book an AI Readiness Assessment</a></div>
+    </div>
+  </div>
+
+  <!-- Assessment -->
+  <section class="block">
+    <div class="container">
+      <div class="split">
+        <div class="reveal">
+          <span class="tier">Start here · Fixed scope</span>
+          <h2 class="h-md" style="margin:0 0 16px">AI Readiness Assessment</h2>
+          <p class="lead" style="font-size:1.08rem">The fastest way to a fundable plan. In a few weeks we benchmark your maturity, quantify the ROI of your top use cases, and hand you a costed 90-day roadmap to production you can take to the board.</p>
+          <ul class="feat-list">
+            <li><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div><div><h4>Maturity scoring</h4><p>Objective scoring across CloudOps, DataOps, GenAIOps, and AgentOps.</p></div></li>
+            <li><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 14l3-3 3 3 5-6"/></svg></div><div><h4>ROI &amp; cost modeling</h4><p>Where the value is, what it costs today, and what it should cost.</p></div></li>
+            <li><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></div><div><h4>Costed 90-day roadmap</h4><p>A prioritized, sequenced, budgeted plan to reach governed production.</p></div></li>
+          </ul>
+        </div>
+        <div class="split-media reveal d1">
+          <div class="dash">
+            <div class="dash-top"><span class="t">Readiness Report</span><span class="pill">Score 72/100</span></div>
+            <div class="metric-row"><span class="k" style="color:var(--dark-muted)">CloudOps</span><span class="v" style="color:#fff">Strong · 84</span></div>
+            <div class="bar"><span style="width:84%"></span></div>
+            <div class="metric-row"><span class="k" style="color:var(--dark-muted)">DataOps</span><span class="v" style="color:#fff">Moderate · 68</span></div>
+            <div class="bar"><span style="width:68%"></span></div>
+            <div class="metric-row"><span class="k" style="color:var(--dark-muted)">GenAIOps</span><span class="v" style="color:#fff">Developing · 61</span></div>
+            <div class="bar"><span style="width:61%"></span></div>
+            <div class="metric-row"><span class="k" style="color:var(--dark-muted)">AgentOps</span><span class="v" style="color:#fff">Early · 54</span></div>
+            <div class="bar"><span style="width:54%"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Services -->
+  <section class="block" style="background:var(--bg-soft)">
+    <div class="container">
+      <div class="section-head center">
+        <span class="tier reveal">Available now</span>
+        <h2 class="h-lg reveal d1">Professional Services</h2>
+        <p class="lead reveal d2">Senior AI engineers who embed with your team and ship — from architecture to a hardened, governed production system. Fixed-scope projects or an embedded pod, whichever fits how you work.</p>
+      </div>
+      <div class="prod-grid">
+        <div class="card reveal">
+          <div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16.2 7.8l-2 6.3-6.3 2 2-6.3 6.3-2z"/></svg></div>
+          <h3>Solution design &amp; architecture</h3>
+          <p>We turn a use case into a concrete, buildable architecture — models, data, infrastructure, and guardrails scoped to your constraints.</p>
+        </div>
+        <div class="card reveal d1">
+          <div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></div>
+          <h3>Implementation &amp; integration</h3>
+          <p>Build the use case and wire it into your cloud, data platforms, and existing systems — with evals and CI/CD in place from day one.</p>
+        </div>
+        <div class="card reveal d2">
+          <div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg></div>
+          <h3>Data &amp; platform engineering</h3>
+          <p>Reliable pipelines, retrieval, and data readiness so what reaches your models is clean, fresh, and defensible.</p>
+        </div>
+        <div class="card reveal">
+          <div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Production hardening</h3>
+          <p>Reliability, security, cost controls, and governance built in — so the jump from pilot to production actually holds up.</p>
+        </div>
+        <div class="card reveal d1">
+          <div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <h3>Enablement &amp; handover</h3>
+          <p>We upskill your team as we build and leave you with documentation and runbooks — hand off cleanly, or keep us on to operate.</p>
+        </div>
+        <div class="card reveal d2">
+          <div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4.5L5.5 22l2-7L2 9h7z"/></svg></div>
+          <h3>Fractional AI leadership</h3>
+          <p>Senior direction — strategy, standards, architecture review — for teams that need a steady hand more than more hands.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Managed Services -->
+  <section class="block">
+    <div class="container">
+      <div class="section-head center">
+        <span class="tier reveal">Now onboarding</span>
+        <h2 class="h-lg reveal d1">Managed Services</h2>
+        <p class="lead reveal d2">Once your AI is live, we run it. Aivilo Managed AI Operations keeps your systems reliable, efficient, and compliant as an ongoing service — so your team stays on the roadmap, not the pager.</p>
+      </div>
+      <div class="prod-grid">
+        <div class="card reveal"><div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h3>Proactive monitoring &amp; response</h3><p>We don't wait to be told there's a problem. Business-hours coverage with defined SLAs and out-of-hours alerting to your on-call.</p></div>
+        <div class="card reveal d1"><div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M15 9.5A2.5 2.5 0 0012.5 7h-1a2.5 2.5 0 000 5h1a2.5 2.5 0 010 5h-1A2.5 2.5 0 019 14.5"/></svg></div><h3>Cost &amp; FinOps optimization</h3><p>Ongoing right-sizing, spend attribution, and budget guardrails that keep AI run-cost trending down, not up.</p></div>
+        <div class="card reveal d2"><div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 0118 0"/><path d="M12 12l4-2"/><circle cx="12" cy="12" r="1.5"/></svg></div><h3>Reliability &amp; quality</h3><p>Drift detection, automated evals, and freshness SLAs so models and pipelines keep performing after launch.</p></div>
+        <div class="card reveal"><div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Governance &amp; compliance ops</h3><p>Audit trails, policy enforcement, and reporting your risk and compliance teams can rely on — continuously.</p></div>
+        <div class="card reveal d1"><div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg></div><h3>Continuous improvement</h3><p>Quarterly business reviews that turn what we observe into cost savings, quality gains, and new sources of ROI.</p></div>
+        <div class="card reveal d2"><div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></svg></div><h3>Powered by Lens</h3><p>Our observability &amp; governance tooling (in development) gives every engagement one source of truth across the stack.</p></div>
+      </div>
+
+      <!-- Engagement tiers -->
+      <div class="section-head center" style="margin:56px auto 32px">
+        <h3 class="h-md reveal">Engagement tiers</h3>
+        <p class="muted reveal d1" style="margin-top:10px">Three ways to run with us — from self-serve visibility to a fully managed pod. We size the engagement to your workloads and SLAs.</p>
+      </div>
+      <div class="prod-grid">
+        <div class="card reveal">
+          <span class="status soon">Self-serve</span>
+          <h3 style="margin-bottom:6px">Lens Core</h3>
+          <p style="flex:none">Lens as your system of record — your team drives, we back you up.</p>
+          <ul class="flist" style="margin-top:16px">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Full Lens platform access &amp; dashboards</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Self-serve cost, quality &amp; outcome visibility</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Break/fix support</li>
+          </ul>
+        </div>
+        <div class="card reveal d1">
+          <span class="status early">Advisory</span>
+          <h3 style="margin-bottom:6px">Lens Advisory</h3>
+          <p style="flex:none">A named advisor who turns Lens signals into prioritized action.</p>
+          <ul class="flist" style="margin-top:16px">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Named Technical Account Manager</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Monthly operational reviews &amp; recommendations</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Part-time solutions-architect oversight</li>
+          </ul>
+        </div>
+        <div class="card reveal d2">
+          <span class="status live">Fully managed</span>
+          <h3 style="margin-bottom:6px">STELLAR Operate</h3>
+          <p style="flex:none">A dedicated pod that runs your AI in production, end to end.</p>
+          <ul class="flist" style="margin-top:16px">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Dedicated pod — TAM, engineers &amp; architect</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Proactive optimization + incident response to SLA</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Monthly reviews &amp; quarterly business reviews</li>
+          </ul>
+        </div>
+      </div>
+      <p class="muted reveal d3" style="text-align:center;font-size:.94rem;margin-top:22px;max-width:760px;margin-left:auto;margin-right:auto">Need net-new build capacity alongside operations? Add <b style="color:var(--text)">STELLAR Forge</b> — pooled engineering hours for new delivery — to any tier. Coverage runs business hours (Mon–Fri) with out-of-hours alerting to your on-call, and scales as your needs grow.</p>
+    </div>
+  </section>
+
+  <section class="block cta">
+    <div class="container">
+      <h2 class="h-lg reveal">Not sure where to start?</h2>
+      <p class="reveal d1">The AI Readiness Assessment is the fastest way to a fundable plan — it pays for itself in the cost and risk it uncovers, and gives you a clear picture of where you stand.</p>
+      <div class="cta-actions reveal d2"><a class="btn btn-accent" href="/contact" data-nav="contact">Book an Assessment</a><a class="btn btn-light" href="/contact" data-nav="contact">Talk to our team</a></div>
+    </div>
+  </section>
+</section>
+
+<!-- ==================================================== -->
+<!-- ================ PARTNERS VIEW ===================== -->
+<!-- ==================================================== -->
+<section class="view" id="view-partners">
+  <div class="page-hero">
+    <div class="container">
+      <span class="eyebrow reveal">Partners</span>
+      <h1 class="h-xl reveal d1">Cloud-agnostic, built on the platforms you already trust</h1>
+      <p class="lead reveal d2">Aivilo runs where you run. We work across the modern AI ecosystem — deploying into whichever cloud you use and integrating with the data platforms, model providers, and frameworks your teams already have.</p>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="container">
+      <div class="split" style="align-items:center">
+        <div class="reveal">
+          <span class="tier">Cloud Provider</span>
+          <h2 class="h-md" style="margin:0 0 14px">AWS Partner Network member</h2>
+          <p class="lead" style="font-size:1.05rem">We're cloud-agnostic, and AWS is one of the clouds we know deeply. As an AWS Partner Network member, Aivilo deploys natively into AWS with the security posture and cost visibility enterprise teams expect — and brings the same discipline to Azure, Google Cloud, and beyond.</p>
+          <ul class="feat-list">
+            <li><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><div><h4>Native cloud deployment</h4><p>Runs inside your account, under your controls.</p></div></li>
+            <li><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><div><h4>FinOps-grade cost data</h4><p>Attribution that reconciles with your cloud bill.</p></div></li>
+          </ul>
+        </div>
+        <div class="split-media reveal d1" style="display:grid;place-items:center;min-height:280px">
+          <div style="text-align:center;position:relative;z-index:1">
+            <div style="font-family:'Space Grotesk';font-weight:700;font-size:2rem;color:#fff">AWS</div>
+            <div style="color:var(--accent-2);font-weight:600;letter-spacing:.1em;font-size:.8rem;margin-top:6px">PARTNER NETWORK</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Microsoft -->
+  <section class="block" style="background:var(--bg-soft)">
+    <div class="container">
+      <div class="split reverse" style="align-items:center">
+        <div class="reveal">
+          <span class="tier">Cloud Provider</span>
+          <h2 class="h-md" style="margin:0 0 14px">Built for Microsoft Azure</h2>
+          <p class="lead" style="font-size:1.05rem">Run Aivilo across your Azure estate with the same security posture and cost visibility — and see it side by side with the rest of your clouds in one control plane.</p>
+          <ul class="feat-list">
+            <li><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><div><h4>Azure-native deployment</h4><p>Runs inside your tenant, under your policies.</p></div></li>
+            <li><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><div><h4>Unified multi-cloud cost</h4><p>Azure spend, reconciled alongside every other provider.</p></div></li>
+          </ul>
+        </div>
+        <div class="split-media reveal d1" style="display:grid;place-items:center;min-height:280px">
+          <div style="text-align:center;position:relative;z-index:1">
+            <div style="font-family:'Space Grotesk';font-weight:700;font-size:2rem;color:#fff">Microsoft</div>
+            <div style="color:var(--accent-2);font-weight:600;letter-spacing:.1em;font-size:.8rem;margin-top:6px">AZURE</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ingram Micro -->
+  <section class="block">
+    <div class="container">
+      <div class="split" style="align-items:center">
+        <div class="reveal">
+          <span class="tier">Distribution Partner</span>
+          <h2 class="h-md" style="margin:0 0 14px">Global reach through Ingram Micro</h2>
+          <p class="lead" style="font-size:1.05rem">Distribution through Ingram Micro puts Aivilo within reach of resellers, partners, and enterprises worldwide — with procurement that fits how your organization already buys.</p>
+          <ul class="feat-list">
+            <li><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><div><h4>Worldwide reseller network</h4><p>Available through the channels you already use.</p></div></li>
+            <li><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><div><h4>Simplified procurement</h4><p>Buy Aivilo alongside the rest of your stack.</p></div></li>
+          </ul>
+        </div>
+        <div class="split-media reveal d1" style="display:grid;place-items:center;min-height:280px">
+          <div style="text-align:center;position:relative;z-index:1">
+            <div style="font-family:'Space Grotesk';font-weight:700;font-size:2rem;color:#fff">Ingram Micro</div>
+            <div style="color:var(--accent-2);font-weight:600;letter-spacing:.1em;font-size:.8rem;margin-top:6px">DISTRIBUTION</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NVIDIA -->
+  <section class="block" style="background:var(--bg-soft)">
+    <div class="container">
+      <div class="split reverse" style="align-items:center">
+        <div class="reveal">
+          <span class="tier">Silicon &amp; Compute</span>
+          <h2 class="h-md" style="margin:0 0 14px">Optimized for NVIDIA accelerators</h2>
+          <p class="lead" style="font-size:1.05rem">Get the most out of your GPUs. Aivilo tracks utilization, cost, and inference performance across your NVIDIA fleet, so nothing sits idle or unaccounted for.</p>
+          <ul class="feat-list">
+            <li><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><div><h4>GPU utilization &amp; cost</h4><p>See spend and usage per team and workload.</p></div></li>
+            <li><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><div><h4>Inference performance</h4><p>Latency and throughput at the silicon level.</p></div></li>
+          </ul>
+        </div>
+        <div class="split-media reveal d1" style="display:grid;place-items:center;min-height:280px">
+          <div style="text-align:center;position:relative;z-index:1">
+            <div style="font-family:'Space Grotesk';font-weight:700;font-size:2rem;color:#fff">NVIDIA</div>
+            <div style="color:var(--accent-2);font-weight:600;letter-spacing:.1em;font-size:.8rem;margin-top:6px">SILICON &amp; COMPUTE</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMD -->
+  <section class="block">
+    <div class="container">
+      <div class="split" style="align-items:center">
+        <div class="reveal">
+          <span class="tier">Silicon &amp; Compute</span>
+          <h2 class="h-md" style="margin:0 0 14px">Efficiency on AMD silicon</h2>
+          <p class="lead" style="font-size:1.05rem">Run efficiently across AMD accelerators and CPUs, with the same cost attribution and performance visibility Aivilo brings to every other layer of compute.</p>
+          <ul class="feat-list">
+            <li><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><div><h4>Cost attribution</h4><p>Per-team, per-workload spend on AMD.</p></div></li>
+            <li><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><div><h4>Right-sized compute</h4><p>Detect idle and over-provisioned resources.</p></div></li>
+          </ul>
+        </div>
+        <div class="split-media reveal d1" style="display:grid;place-items:center;min-height:280px">
+          <div style="text-align:center;position:relative;z-index:1">
+            <div style="font-family:'Space Grotesk';font-weight:700;font-size:2rem;color:#fff">AMD</div>
+            <div style="color:var(--accent-2);font-weight:600;letter-spacing:.1em;font-size:.8rem;margin-top:6px">SILICON &amp; COMPUTE</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intel -->
+  <section class="block" style="background:var(--bg-soft)">
+    <div class="container">
+      <div class="split reverse" style="align-items:center">
+        <div class="reveal">
+          <span class="tier">Silicon &amp; Compute</span>
+          <h2 class="h-md" style="margin:0 0 14px">Intel-powered infrastructure</h2>
+          <p class="lead" style="font-size:1.05rem">From training to inference, Aivilo gives you visibility into performance and cost across Intel-based infrastructure — as part of one unified view of compute.</p>
+          <ul class="feat-list">
+            <li><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><div><h4>Unified compute visibility</h4><p>Intel alongside every other accelerator.</p></div></li>
+            <li><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><div><h4>Performance &amp; cost tracking</h4><p>Know what each workload really costs.</p></div></li>
+          </ul>
+        </div>
+        <div class="split-media reveal d1" style="display:grid;place-items:center;min-height:280px">
+          <div style="text-align:center;position:relative;z-index:1">
+            <div style="font-family:'Space Grotesk';font-weight:700;font-size:2rem;color:#fff">Intel</div>
+            <div style="color:var(--accent-2);font-weight:600;letter-spacing:.1em;font-size:.8rem;margin-top:6px">SILICON &amp; COMPUTE</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OpenAI -->
+  <section class="block">
+    <div class="container">
+      <div class="split" style="align-items:center">
+        <div class="reveal">
+          <span class="tier">Foundation Model Provider</span>
+          <h2 class="h-md" style="margin:0 0 14px">Govern your OpenAI usage</h2>
+          <p class="lead" style="font-size:1.05rem">Full observability and governance over the OpenAI models you run in production — token consumption, cost per request, quality, and drift, all in one place.</p>
+          <ul class="feat-list">
+            <li><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><div><h4>Token &amp; cost tracking</h4><p>Cost-per-request across every model.</p></div></li>
+            <li><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><div><h4>Quality &amp; drift monitoring</h4><p>Catch regressions before your users do.</p></div></li>
+          </ul>
+        </div>
+        <div class="split-media reveal d1" style="display:grid;place-items:center;min-height:280px">
+          <div style="text-align:center;position:relative;z-index:1">
+            <div style="font-family:'Space Grotesk';font-weight:700;font-size:2rem;color:#fff">OpenAI</div>
+            <div style="color:var(--accent-2);font-weight:600;letter-spacing:.1em;font-size:.8rem;margin-top:6px">FOUNDATION MODELS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Anthropic -->
+  <section class="block" style="background:var(--bg-soft)">
+    <div class="container">
+      <div class="split reverse" style="align-items:center">
+        <div class="reveal">
+          <span class="tier">Foundation Model Provider</span>
+          <h2 class="h-md" style="margin:0 0 14px">Full visibility into Anthropic models</h2>
+          <p class="lead" style="font-size:1.05rem">Monitor behavior, cost, and safety across the Anthropic models in your stack — with the trace-level detail your governance and compliance teams need.</p>
+          <ul class="feat-list">
+            <li><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><div><h4>Behavior &amp; safety monitoring</h4><p>Guardrails and quality checks in production.</p></div></li>
+            <li><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div><div><h4>Trace-level auditability</h4><p>Every request, explainable end to end.</p></div></li>
+          </ul>
+        </div>
+        <div class="split-media reveal d1" style="display:grid;place-items:center;min-height:280px">
+          <div style="text-align:center;position:relative;z-index:1">
+            <div style="font-family:'Space Grotesk';font-weight:700;font-size:2rem;color:#fff">Anthropic</div>
+            <div style="color:var(--accent-2);font-weight:600;letter-spacing:.1em;font-size:.8rem;margin-top:6px">FOUNDATION MODELS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="container">
+      <div class="section-head center" style="margin-bottom:32px"><span class="eyebrow reveal">Become a partner</span><h2 class="h-md reveal d1">Let's get more AI into production together</h2><p class="lead reveal d2">We work with cloud providers, consultancies, and technology partners who share our conviction that the hard part of AI is getting it to production with measurable ROI.</p></div>
+      <div style="text-align:center" class="reveal d3"><a class="btn btn-accent" href="/contact" data-nav="contact">Explore partnership</a></div>
+    </div>
+  </section>
+</section>
+
+<!-- ==================================================== -->
+<!-- ================ COMPANY VIEW ====================== -->
+<!-- ==================================================== -->
+<section class="view" id="view-company">
+  <div class="page-hero">
+    <div class="container">
+      <span class="eyebrow reveal">Company</span>
+      <h1 class="h-xl reveal d1">We turn AI ambition into measurable outcomes</h1>
+      <p class="lead reveal d2">Aivilo Cloud Technologies exists to close the gap between AI ambition and AI in production — so regulated organizations can run AI with the same confidence they run the rest of their business.</p>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="container">
+      <div class="split">
+        <div class="reveal">
+          <span class="eyebrow">Our mission</span>
+          <h2 class="h-md" style="margin:14px 0 16px">Get AI out of the POC phase — and prove it in production</h2>
+          <p class="lead" style="font-size:1.05rem">Most organizations get stuck in the POC phase of AI: impressive demos that never reach production or prove their ROI. We started Aivilo because we kept watching promising work stall on cost overruns, silent failures, and compliance questions nobody could answer.</p>
+          <p style="margin-top:16px;color:var(--text-2)">Our answer is a services-first partnership: assessments to find the ROI, senior engineers to ship it, and managed operations to keep it running — with Lens giving everyone a shared, measurable view of the outcomes.</p>
+        </div>
+        <div class="split-media reveal d1" style="display:grid;place-content:center;gap:22px">
+          <div class="dc" style="position:relative;z-index:1"><div class="l">Founded to solve</div><div class="n" style="font-size:1.15rem">The POC-to-production gap</div></div>
+          <div class="dc" style="position:relative;z-index:1"><div class="l">Focus</div><div class="n" style="font-size:1.15rem">Healthcare &amp; regulated industries</div></div>
+          <div class="dc" style="position:relative;z-index:1"><div class="l">Approach</div><div class="n" style="font-size:1.15rem">Assess · Implement · Operate</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="background:var(--bg-soft)">
+    <div class="container">
+      <div class="section-head center"><span class="eyebrow reveal">What we believe</span><h2 class="h-lg reveal d1">Principles that shape our work</h2></div>
+      <div class="val-grid">
+        <div class="val reveal"><div class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Visibility first</h3><p>You can't govern or improve what you can't see. Observability is the foundation everything else stands on.</p></div>
+        <div class="val reveal d1"><div class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Governance by default</h3><p>Compliance and safety aren't features to bolt on later. They're designed into the system from day one.</p></div>
+        <div class="val reveal d2"><div class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>Operate, don't experiment</h3><p>Demos are easy. We measure ourselves on getting AI to reliable, efficient, accountable production.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="container">
+      <div class="section-head center"><span class="eyebrow reveal">The journey</span><h2 class="h-lg reveal d1">Where we are</h2></div>
+      <div class="tl" style="margin:0 auto">
+        <div class="tl-item reveal"><div class="yr">Now</div><div><h4>Professional &amp; managed services — delivering</h4><p>Teams start with an AI Readiness Assessment, then bring us in to build and operate their priority use cases.</p></div></div>
+        <div class="tl-item reveal d1"><div class="yr">Now</div><div><h4>Lens — early access with design partners</h4><p>Lens anchors our engagements today while we validate it in market across cost, quality, reliability, and governance.</p></div></div>
+        <div class="tl-item reveal d2"><div class="yr">Next</div><div><h4>Broader Lens availability &amp; automation</h4><p>Expanding integrations, automated remediation, and self-serve onboarding as Lens matures toward general availability.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block cta">
+    <div class="container">
+      <h2 class="h-lg reveal">Want to help build it?</h2>
+      <p class="reveal d1">Whether you're a prospective customer, partner, or teammate — we'd love to talk.</p>
+      <div class="cta-actions reveal d2"><a class="btn btn-accent" href="/contact" data-nav="contact">Get in touch</a></div>
+    </div>
+  </section>
+</section>
+
+<!-- ==================================================== -->
+<!-- ================ CONTACT VIEW ====================== -->
+<!-- ==================================================== -->
+<section class="view" id="view-contact">
+  <div class="page-hero">
+    <div class="container">
+      <span class="eyebrow reveal">Contact</span>
+      <h1 class="h-xl reveal d1">Let's talk about your AI stack</h1>
+      <p class="lead reveal d2">Request early access to Lens, book an AI Readiness Assessment, or just tell us what you're wrestling with. We'll get back to you within one business day.</p>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="ci-item"><div class="cii"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg></div><div><h4>Email us</h4><a href="/contact" data-nav="contact">hello@aivilo.ai</a></div></div>
+          <div class="ci-item"><div class="cii"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div><div><h4>Book an assessment</h4><p>The fastest path to a clear, prioritized roadmap.</p></div></div>
+          <div class="ci-item"><div class="cii"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></svg></div><div><h4>Request early access</h4><p>Join the design partners already running Lens.</p></div></div>
+          <div class="ci-item"><div class="cii"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>Built for regulated teams</h4><p>Security and compliance conversations welcome early.</p></div></div>
+        </div>
+
+        <form class="reveal d1" id="contactForm" onsubmit="return false">
+          <div class="field"><label>Full name</label><input type="text" placeholder="Jane Doe" required></div>
+          <div class="field"><label>Work email</label><input type="email" placeholder="jane@company.com" required></div>
+          <div class="field"><label>Company</label><input type="text" placeholder="Company name"></div>
+          <div class="field"><label>What are you interested in?</label>
+            <select>
+              <option>AI Readiness Assessment</option>
+              <option>Lens Platform early access</option>
+              <option>Professional &amp; Managed Services</option>
+              <option>Partnership</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field"><label>Tell us a bit more</label><textarea placeholder="What are you trying to get into production?"></textarea></div>
+          <button type="submit" class="btn btn-accent" id="submitBtn" style="width:100%;justify-content:center">Send message</button>
+          <p class="form-note">This is an interactive preview — the form doesn't send anything yet.</p>
+          <div class="form-success" id="formSuccess">Thanks! In the live site this would reach the Aivilo team. We'll be in touch within one business day.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand" data-nav="home"><img class="brand-logo" src="/logo-horizontal.png" width="1088" height="220" alt="Aivilo" /></div>
+        <p>AI services for regulated industries — from proving ROI to production and managed operations, with Lens for continuous visibility.</p>
+      </div>
+      <div class="foot-col"><h5>Services</h5>
+        <a href="/services" data-nav="services">AI Readiness Assessment</a>
+        <a href="/services" data-nav="services">Professional Services</a>
+        <a href="/services" data-nav="services">Managed Services</a>
+        <a href="/platform" data-nav="platform">Lens (in development)</a>
+      </div>
+      <div class="foot-col"><h5>Company</h5>
+        <a href="/company" data-nav="company">About</a>
+        <a href="/partners" data-nav="partners">Partners</a>
+        <a href="/contact" data-nav="contact">Contact</a>
+        <a href="/contact" data-nav="contact">Request early access</a>
+      </div>
+      <div class="foot-col"><h5>Legal</h5>
+        <a href="#" onclick="return false">Privacy Policy</a>
+        <a href="#" onclick="return false">Security Policy</a>
+        <a href="#" onclick="return false">Terms of Service</a>
+        <a href="#" onclick="return false">System Status</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Aivilo Cloud Technologies Inc. All rights reserved.</span>
+      <div class="socials">
+        <a href="#" onclick="return false" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 002.5 6 2.5 2.5 0 005 8.5 2.5 2.5 0 007.5 6 2.5 2.5 0 004.98 3.5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-4z"/></svg></a>
+        <a href="#" onclick="return false" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.8l-5.3-7-6.1 7H1.7l8-9.2L1 2h7l4.8 6.4L18.9 2zm-2.4 18h1.9L7.6 4H5.6z"/></svg></a>
+        <a href="#" onclick="return false" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.4 9.4 0 015 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.26 10.26 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============ Aivilo — front-end interactions (multi-page) ============
+   Each route is its own prerendered HTML page, so navigation is native.
+   This script only wires up whatever interactive components are on the page. */
+
+/* Header background on scroll */
+const header = document.getElementById('header');
+if (header) {
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 10);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
+
+/* Mobile menu */
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobileMenu');
+if (burger) {
+  burger.addEventListener('click', () => {
+    const open = burger.classList.toggle('open');
+    if (mobileMenu) mobileMenu.classList.toggle('open', open);
+    document.body.classList.toggle('no-scroll', open);
+  });
+}
+
+/* Logo → home */
+document.querySelectorAll('.brand[data-nav="home"]').forEach(el => {
+  el.addEventListener('click', () => { window.location.href = '/'; });
+});
+
+/* Highlight the active nav link for the current route */
+(function () {
+  const seg = location.pathname.replace(/^\/+|\/+$/g, '').split('/')[0];
+  const route = seg || 'home';
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('data-nav') === route);
+  });
+})();
+
+/* Reveal-on-scroll */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* Four-Ops explorer tabs */
+document.querySelectorAll('.ops-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const key = tab.getAttribute('data-ops');
+    document.querySelectorAll('.ops-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelectorAll('.ops-panel').forEach(p => p.classList.toggle('active', p.getAttribute('data-panel') === key));
+  });
+});
+
+/* FAQ accordion */
+document.querySelectorAll('.qa button').forEach(b => {
+  b.addEventListener('click', () => {
+    const qa = b.parentElement;
+    const ans = qa.querySelector('.ans');
+    const open = qa.classList.toggle('open');
+    ans.style.maxHeight = open ? ans.scrollHeight + 'px' : 0;
+  });
+});
+
+/* Animated metric counters */
+function animateCount(el) {
+  const target = parseFloat(el.dataset.count);
+  const dec = parseInt(el.dataset.dec || '0');
+  const suffix = el.dataset.suffix || '';
+  const prefix = el.dataset.prefix || '';
+  const dur = 1400, start = performance.now();
+  function tick(now) {
+    let p = Math.min((now - start) / dur, 1);
+    p = 1 - Math.pow(1 - p, 3); // easeOutCubic
+    el.textContent = prefix + (target * p).toFixed(dec) + suffix;
+    if (p < 1) requestAnimationFrame(tick);
+    else el.textContent = prefix + target.toFixed(dec) + suffix;
+  }
+  requestAnimationFrame(tick);
+}
+const counters = document.querySelectorAll('[data-count]');
+if (counters.length) {
+  const cio = new IntersectionObserver((entries) => {
+    entries.forEach(en => { if (en.isIntersecting) { animateCount(en.target); cio.unobserve(en.target); } });
+  }, { threshold: 0.4 });
+  counters.forEach(el => { el.textContent = (el.dataset.prefix || '') + '0' + (el.dataset.suffix || ''); cio.observe(el); });
+}
+
+/* Contact form (interactive demo only) */
+const cf = document.getElementById('contactForm');
+if (cf) {
+  cf.addEventListener('submit', () => {
+    document.getElementById('formSuccess').classList.add('show');
+    document.getElementById('submitBtn').textContent = 'Message sent ✓';
+  });
+}
+</script>
+</body>
+</html>

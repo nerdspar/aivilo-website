@@ -1,0 +1,40 @@
+# Aivilo website — deployment stack for TrueNAS SCALE (Custom App → install via YAML)
+#
+#   web         the static site, served by nginx on :8080 (non-root)
+#   cloudflared OPTIONAL Cloudflare Tunnel sidecar. Enable it by setting
+#               CLOUDFLARE_TUNNEL_TOKEN in your .env and starting the "tunnel"
+#               profile:  docker compose --profile tunnel up -d
+#
+# In the Cloudflare Zero Trust dashboard, point the tunnel's public hostname
+# (aivilo.nerdspar.com) at the service URL:  http://web:8080
+#
+# If you already run cloudflared elsewhere on the network, ignore the sidecar
+# and just point your tunnel at this host's published port (see `ports` below).
+
+services:
+  web:
+    image: ghcr.io/nerdspar/aivilo-website:latest
+    container_name: aivilo-website
+    restart: unless-stopped
+    # Publish to the host only if you terminate the tunnel/reverse-proxy
+    # elsewhere. If you use the cloudflared sidecar below, you can remove this
+    # `ports` block entirely — the tunnel reaches `web` over the internal network.
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8080/healthz"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: aivilo-cloudflared
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    environment:
+      - TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN:?set CLOUDFLARE_TUNNEL_TOKEN in .env}
+    depends_on:
+      - web
+    profiles: ["tunnel"]

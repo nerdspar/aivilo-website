@@ -1,0 +1,21 @@
+# Build output (regenerated inside the image)
+dist/
+
+# VCS / CI / docs
+.git
+.github
+README.md
+LICENSE
+
+# Local/dev
+.env
+.env.*
+!.env.example
+docker-compose.yml
+node_modules/
+*.log
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
