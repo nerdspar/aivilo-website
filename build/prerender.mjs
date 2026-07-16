@@ -39,7 +39,7 @@ const ROUTES = [
   {
     route: 'home', path: '/', schema: 'WebPage',
     title: 'Aivilo — Enterprise AI Services That Get You to Production',
-    description: 'Aivilo is an AI services partner for healthcare and other regulated industries. We prove the ROI, do the engineering to reach production, and run it for you — faster, and for less.',
+    description: 'Aivilo is an AI services partner for healthcare and other regulated industries. We prove the ROI, do the engineering to reach production, and get it live — faster, and for less.',
   },
   {
     route: 'platform', path: '/platform', schema: 'WebPage',
