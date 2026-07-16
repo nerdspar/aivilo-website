@@ -106,18 +106,18 @@ TrueNAS SCALE (Electric Eel 24.10+) runs Docker Compose apps directly.
 
 1. **Apps → Discover Apps → Custom App** (top-right) → **Install via YAML**.
 2. Paste the contents of [`docker-compose.yml`](docker-compose.yml).
-3. If using the Cloudflare sidecar, replace `${CLOUDFLARE_TUNNEL_TOKEN}` with your
-   actual tunnel token (TrueNAS YAML has no `.env` substitution), and remove the
-   `profiles: ["tunnel"]` line so the `cloudflared` service starts.
-4. **Install.**
+3. Replace `${CLOUDFLARE_TUNNEL_TOKEN:?...}` in the `cloudflared` service with your
+   actual tunnel token (TrueNAS YAML has no `.env` substitution, so the token must
+   be inline). Don't want the tunnel? Delete the whole `cloudflared` service.
+4. **Install**, then confirm **two** containers start (`aivilo-website` and
+   `aivilo-cloudflared`).
 
 ### Option B — Docker Compose CLI (if you use the shell)
 
 ```bash
 cp .env.example .env         # then paste your tunnel token into .env
 docker compose pull
-docker compose up -d                       # web only (expose :8080 to your LAN)
-docker compose --profile tunnel up -d      # web + Cloudflare Tunnel sidecar
+docker compose up -d         # starts web + Cloudflare Tunnel sidecar
 ```
 
 The container serves on port **8080** and has a `/healthz` endpoint for health checks.
@@ -144,7 +144,9 @@ your router.
 2. Name it (e.g. `aivilo`), then copy the **token** from the Docker install command
    (the long `eyJ…` string after `--token`).
 3. Put it in `.env` as `CLOUDFLARE_TUNNEL_TOKEN=…` (Option B) or paste it into the YAML
-   (Option A), and start the `tunnel` profile.
+   (Option A), then deploy. The `cloudflared` container connects on start — check its
+   logs for `Registered tunnel connection`; the tunnel then shows **HEALTHY** in the
+   dashboard. (`Unauthorized` / `invalid tunnel token` = the token was mangled.)
 4. Back in the tunnel's **Public Hostnames**, add:
    - **Subdomain/Domain:** `aivilo` / `nerdspar.com`
    - **Service:** `HTTP` → `web:8080`  ← the sidecar reaches the site over the

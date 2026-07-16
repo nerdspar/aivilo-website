@@ -1,24 +1,30 @@
 # Aivilo website — deployment stack for TrueNAS SCALE (Custom App → install via YAML)
 #
 #   web         the static site, served by nginx on :8080 (non-root)
-#   cloudflared OPTIONAL Cloudflare Tunnel sidecar. Enable it by setting
-#               CLOUDFLARE_TUNNEL_TOKEN in your .env and starting the "tunnel"
-#               profile:  docker compose --profile tunnel up -d
+#   cloudflared Cloudflare Tunnel sidecar — exposes the site publicly with no
+#               ports forwarded on your router.
 #
-# In the Cloudflare Zero Trust dashboard, point the tunnel's public hostname
-# (aivilo.nerdspar.com) at the service URL:  http://web:8080
+# TrueNAS: paste this YAML, then replace ${CLOUDFLARE_TUNNEL_TOKEN} below with
+# your actual tunnel token (the long "eyJ..." string). TrueNAS does not read a
+# .env file, so the token must be inline there.
 #
-# If you already run cloudflared elsewhere on the network, ignore the sidecar
-# and just point your tunnel at this host's published port (see `ports` below).
+# Plain docker compose (CLI): put CLOUDFLARE_TUNNEL_TOKEN in a .env file next to
+# this compose (see .env.example) and run `docker compose up -d`.
+#
+# After the cloudflared container connects, the tunnel shows HEALTHY in
+# Cloudflare Zero Trust → Networks → Tunnels. Add a Public Hostname pointing at
+# the service:  HTTP → web:8080
+#
+# Don't want the tunnel (terminating TLS elsewhere)? Delete the cloudflared
+# service and reach the site on the published port below.
 
 services:
   web:
     image: ghcr.io/nerdspar/aivilo-website:latest
     container_name: aivilo-website
     restart: unless-stopped
-    # Publish to the host only if you terminate the tunnel/reverse-proxy
-    # elsewhere. If you use the cloudflared sidecar below, you can remove this
-    # `ports` block entirely — the tunnel reaches `web` over the internal network.
+    # Optional: publish to the host for LAN access / testing. The cloudflared
+    # sidecar does NOT need this — it reaches `web` over the internal network.
     ports:
       - "8080:8080"
     healthcheck:
@@ -34,7 +40,7 @@ services:
     restart: unless-stopped
     command: tunnel --no-autoupdate run
     environment:
-      - TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN:?set CLOUDFLARE_TUNNEL_TOKEN in .env}
+      # TrueNAS: replace the whole ${...} with your literal token.
+      - TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN:?set CLOUDFLARE_TUNNEL_TOKEN in .env or paste the token here}
     depends_on:
       - web
-    profiles: ["tunnel"]
