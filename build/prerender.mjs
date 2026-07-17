@@ -44,12 +44,12 @@ const ROUTES = [
   {
     route: 'platform', path: '/platform', schema: 'WebPage',
     title: 'Lens — Observability & governance for AI operations | Aivilo',
-    description: 'Lens is the observability and governance layer behind our managed services — one view of cost, quality, reliability, and compliance. In development and in early access with design partners.',
+    description: 'Lens is the platform behind every Aivilo engagement — it instruments your stack, orchestrates the work, and gives one live view of cost, quality, reliability, and governance.',
   },
   {
     route: 'services', path: '/services', schema: 'WebPage',
     title: 'Services — AI Readiness Assessment, Professional & Managed Services | Aivilo',
-    description: 'Prove the ROI with an AI Readiness Assessment, ship with senior engineers via Professional Services, and run it in production with Managed Services — Lens Core, Lens Advisory, and STELLAR Operate.',
+    description: 'Start with a free AI Readiness Assessment, get a costed AI Value Blueprint, then build and run it with Aivilo Professional and Managed Services.',
   },
   {
     route: 'partners', path: '/partners', schema: 'WebPage',
@@ -64,7 +64,7 @@ const ROUTES = [
   {
     route: 'contact', path: '/contact', schema: 'ContactPage',
     title: 'Contact — Talk to us about getting AI to production | Aivilo',
-    description: 'Book an AI Readiness Assessment, scope a services engagement, or request early access to Lens. Tell us what you are wrestling with and we will reply within one business day.',
+    description: 'Take the free AI Readiness Assessment, book a consultation, or scope a project. Tell us what you are wrestling with and we will reply within one business day.',
   },
 ];
 

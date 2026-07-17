@@ -21,6 +21,7 @@
 services:
   web:
     image: ghcr.io/nerdspar/aivilo-website:latest
+    pull_policy: always      # re-pull :latest from GHCR on every (re)deploy
     container_name: aivilo-website
     restart: unless-stopped
     # Optional: publish to the host for LAN access / testing. The cloudflared
@@ -36,6 +37,7 @@ services:
 
   cloudflared:
     image: cloudflare/cloudflared:latest
+    pull_policy: always
     container_name: aivilo-cloudflared
     restart: unless-stopped
     command: tunnel --no-autoupdate run
